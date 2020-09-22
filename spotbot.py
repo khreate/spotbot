@@ -49,8 +49,9 @@ async def on_message(message):
                 print(trackid)
                 sp.user_playlist_add_tracks(username, playlist_id=playlist_id, tracks=trackid)
             # sp.user_playlist_add_tracks(username, playlist_id=playlist_id, tracks=trackid)
-            embed = discord.Embed(color=discord.Color.from_rgb(0, 240, 0), title="Success!",
-                                  description="Check out the playlist at https://open.spotify.com/playlist/5Hkq93FPBgV5eDp9HvgJ5J?si=XXQSSL8mR7WJLynSXa-svg")
+            embed = discord.Embed(color=discord.Color.from_rgb(0, 240, 0), title="Success!", # this embed is optional, i send it so that people on the server
+                                  description="Check out the playlist at <LINK_TO_PLAYLIST>") # know what the playlist is / can access without navigating to my
+                                                                                              # profile on spotify
             await message.channel.send(content=None, embed=embed)
 
 client.run(token)
